@@ -1,8 +1,8 @@
 name = "John"
-print(name)
+print(f"Name: {name}")
 age = 18
-print(age)
+print(f"Age: {age}")
 age = age + 2
-print(age)
+print(f"New age: {age}")
 is_student = True
-print(is_student)
+print(f"Is Student: {is_student}")
