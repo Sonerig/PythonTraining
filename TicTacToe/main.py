@@ -1,4 +1,4 @@
-def draw_area(area):                                                    # Функция отрисовки в консоль доски
+def draw_area(area):                                                        # Функция отрисовки в консоль доски
     print("-" * 13)
     for i in range(len(area)):
         print("|", area[i][0], "|", area[i][1], "|", area[i][2], "|")
@@ -63,34 +63,35 @@ def set_in_area(area, turn):                                                # Х
 def main():                                                         # Главная функция
     print("Wellcome to Tic-Tak game!")                              # Приветствие
     print("=" * 56)
-    area = [['#', '#', '#'], ['#', '#', '#'], ['#', '#', '#']]      # Поле игры
+    area = [[*('#' * 3)], [*('#' * 3)], [*('#' * 3)]]               # Поле игры
 
     try:
-        draw_area(area)                     # Отрисовать поле игры
+        draw_area(area)                                             # Отрисовать поле игры
 
         for turn in range(9):
-            if turn % 2 == 0:               # Ход крестика
+            if turn % 2 == 0:                                       # Ход крестика
                 print("X turn!")
                 print("=" * 56)
                 set_in_area(area, 'X')
-            else:                           # Ход нолика
+            else:                                                   # Ход нолика
                 print("0 turn!")
                 print("=" * 56)
                 set_in_area(area, '0')
 
-            draw_area(area)                 # Отрисовать поле игры
+            draw_area(area)                                         # Отрисовать поле игры
 
-            if check_if_win(area, "X"):     # Проверка крестика на победителя
+            if check_if_win(area, "X") and turn >= 3:               # Проверка крестика на победителя
                 print("X win!")
                 print("=" * 56)
                 return
-            elif check_if_win(area, "0"):   # Проверка нолика на победителя
+            elif check_if_win(area, "0") and turn >= 3:             # Проверка нолика на победителя
                 print("0 win!")
                 print("=" * 56)
                 return
-    except KeyboardInterrupt:               # Обработка исключения при досрочном выходе из игры
+        print("Game over")                                          # Ничья
+
+    except KeyboardInterrupt:                                       # Обработка исключения при досрочном выходе из игры
         print("\nBye-bye")
-    print("Game over")                      # Ничья
 
 
 main()
