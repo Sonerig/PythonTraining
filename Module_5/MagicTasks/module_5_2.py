@@ -11,10 +11,10 @@ class House:                                                        # Класс
         else:                                                       # Выввод при соблюдении всех условий
             print(*range(1, new_floor + 1))
 
-    def __len__(self):
+    def __len__(self):                                              # Переопределение метода __len__
         return self.number_of_floors
 
-    def __str__(self):
+    def __str__(self):                                              # Переопределение метода __str__
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
 
 
