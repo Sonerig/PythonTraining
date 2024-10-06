@@ -5,15 +5,6 @@ class Animal:                       # Класс животного
     alive = True                    # Животное живое
     fed = False                     # Животное накормленное
 
-
-class Plant:                        # Класс растений
-    def __init__(self, name):       # Определение названия растения
-        self.name = name
-
-    edible = False                  # Растение съедобное
-
-
-class Mammal(Animal):               # Дочерний класс от "Животного" - млекопитающее
     def eat(self, food):            # Метод для кормления, принимающий food (объект класса растения)
         if food.edible:             # Если съедобно - съесть
             print(f"{self.name} съел {food.name}")
@@ -23,14 +14,19 @@ class Mammal(Animal):               # Дочерний класс от "Живо
             self.alive = False
 
 
+class Plant:                        # Класс растений
+    def __init__(self, name):       # Определение названия растения
+        self.name = name
+
+    edible = False                  # Растение съедобное
+
+
+class Mammal(Animal):               # Дочерний класс от "Животного" - млекопитающее
+    pass
+
+
 class Predator(Animal):             # Дочерний класс от "Животного" - хищник
-    def eat(self, food):            # Идентичный метод что и у млекопитающего (повторение метода по условию задачи)
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    pass
 
 
 class Flower(Plant):                # Дочерний класс от "Растения" - цветы
