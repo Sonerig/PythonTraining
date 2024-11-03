@@ -29,6 +29,7 @@ threads_time_start = time.time()
 for thread in threads:
     thread.start()
 
-threads[2].join()
+for thread in threads:
+    thread.join()
 
 print(f"На выполнение работы потоков ушло: {int(time.time() - threads_time_start)} сек.")
