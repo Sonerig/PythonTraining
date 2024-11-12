@@ -5,7 +5,8 @@ import multiprocessing
 def read_info(name):
     all_data = list()
     with open(name, 'r', encoding="utf-8") as file:
-        all_data.append(file.readline())
+        for line in file:
+            all_data.append(line)
 
 
 file_names = [f"file {num}.txt" for num in range(1, 5)]
