@@ -15,7 +15,7 @@ cursor.execute("CREATE TABLE IF NOT EXISTS Users("
 # Заполнение БД
 for i in range(1, 11):
    cursor.execute("INSERT INTO Users(username, email, age, balance) VALUES (?, ?, ?, ?)",
-                  (f"User{i}", f"example{i}@gmail.com", i * 10, i * 1000))
+                  (f"User{i}", f"example{i}@gmail.com", i * 10, 1000))
 
 # Обновление данных в БД
 for i in range(1, 11, 2):
